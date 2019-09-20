@@ -1,5 +1,13 @@
+#
+# Dependencies
+#
+
 import unittest
 from ring_buffer import RingBuffer
+
+#
+# Define assertions
+#
 
 class RingBufferTests(unittest.TestCase):
     def setUp(self):
@@ -29,6 +37,9 @@ class RingBufferTests(unittest.TestCase):
         self.assertEqual(len(self.buffer.storage), 5)
         self.assertEqual(self.buffer.get(), ['f', 'g', 'h', 'i', 'e'])
 
+#
+# Run assertions
+#
 
 if __name__ == '__main__':
     unittest.main()
