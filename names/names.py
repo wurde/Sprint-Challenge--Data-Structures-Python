@@ -3,6 +3,7 @@
 #
 
 import time
+from binary_search_tree import BinarySearchTree
 
 #
 # Define method
@@ -20,9 +21,19 @@ def checkDuplicates():
     f.close()
 
     duplicates = []
+    tree = BinarySearchTree(names_1.pop())
     for name_1 in names_1:
-        if name_1 in names_2:
-            duplicates.append(name_1)
+        tree.insert(name_1)
+
+    for name_2 in names_2:
+        if tree.contains(name_2):
+            duplicates.append(name_2)
+
+    # FIRST-PASS solution
+    # duplicates = []
+    # for name_1 in names_1:
+    #     if name_1 in names_2:
+    #         duplicates.append(name_1)
 
     # ORIGINAL code
     # duplicates = []
