@@ -20,6 +20,7 @@ def checkDuplicates():
     names_2 = f.read().split("\n")  # List containing 10000 names
     f.close()
 
+    # SECOND-PASS solution
     duplicates = []
     tree = BinarySearchTree(names_1.pop())
     for name_1 in names_1:
@@ -46,7 +47,7 @@ def checkDuplicates():
     print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
     #=> 64 duplicates: ...
     print (f"runtime: {end_time - start_time} seconds")
-    #=> runtime: 0.7826683521270752 seconds
+    #=> runtime: 0.07622385025024414 seconds
 
 #
 # Run method
